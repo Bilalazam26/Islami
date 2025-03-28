@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">إسلامي</string>
+    <string name="quran">القرآن الكريم</string>
+    <string name="hadith">الحديث</string>
+    <string name="tafseer">التفسير</string>
+    <string name="azkar">الأذكار</string>
+    <string name="salah_times">أوقات الصلاة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="home">Home</string>
+</resources>

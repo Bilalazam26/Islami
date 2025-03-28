@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Islami</string>
+    <string name="quran">Quran</string>
+    <string name="hadith">Hadith</string>
+    <string name="tafseer">Tafseer</string>
+    <string name="azkar">Azkar</string>
+    <string name="salah_times">SalahTimes</string>
+    <string name="settings">Settings</string>
+    <string name="home">Home</string>
+</resources>
