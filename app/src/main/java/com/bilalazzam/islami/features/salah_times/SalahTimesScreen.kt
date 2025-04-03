@@ -1,4 +1,4 @@
-package com.bilalazzam.islami.salah_times
+package com.bilalazzam.islami.features.salah_times
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

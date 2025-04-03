@@ -13,7 +13,7 @@ val Typography = Typography(
 
     displayLarge = TextStyle(
         fontFamily = FontFamily(
-            Font(R.font.titr_bold)
+            Font(R.font.motairah)
         ),
         fontSize = 48.sp,
         lineHeight = 56.sp,

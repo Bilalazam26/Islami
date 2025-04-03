@@ -9,13 +9,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.createGraph
-import com.bilalazzam.islami.auran.QuranScreen
-import com.bilalazzam.islami.azkar.AzkarScreen
-import com.bilalazzam.islami.hadith.HadithScreen
-import com.bilalazzam.islami.home.HomeScreen
-import com.bilalazzam.islami.salah_times.SalahTimesScreen
-import com.bilalazzam.islami.settings.SettingsScreen
-import com.bilalazzam.islami.tafseer.TafseerScreen
+import com.bilalazzam.islami.features.quran_feature.auran.QuranScreen
+import com.bilalazzam.islami.features.azkar_feature.AzkarScreen
+import com.bilalazzam.islami.features.hadith_feature.HadithScreen
+import com.bilalazzam.islami.core.presentation.main.HomeScreen
+import com.bilalazzam.islami.features.salah_times.SalahTimesScreen
+import com.bilalazzam.islami.core.presentation.main.settings.SettingsScreen
+import com.bilalazzam.islami.features.quran_feature.tafseer.TafseerScreen
 
 
 @Composable

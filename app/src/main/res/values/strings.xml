@@ -7,4 +7,7 @@
     <string name="salah_times">SalahTimes</string>
     <string name="settings">Settings</string>
     <string name="home">Home</string>
+    <string name="english_language">English Language</string>
+    <string name="arabic_language">Arabic Language</string>
+    <string name="salam_alaykom">As-Salamu Alaykumْ</string>
 </resources>

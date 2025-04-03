@@ -1,4 +1,4 @@
-package com.bilalazzam.islami.azkar
+package com.bilalazzam.islami.features.azkar_feature
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

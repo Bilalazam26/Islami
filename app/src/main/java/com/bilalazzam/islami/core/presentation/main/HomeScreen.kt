@@ -1,4 +1,4 @@
-package com.bilalazzam.islami.home
+package com.bilalazzam.islami.core.presentation.main
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,7 +51,8 @@ fun HomeScreen(
                 painter = painterResource(R.drawable.mosque),
                 contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
             )
             HomeContent(
                 modifier = Modifier.fillMaxSize()
@@ -68,7 +70,8 @@ fun HomeScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 18.dp),
-                contentScale = ContentScale.FillWidth
+                contentScale = ContentScale.FillWidth,
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.surface)
             )
             NavigationComponent(
                 modifier = Modifier

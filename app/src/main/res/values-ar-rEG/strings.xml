@@ -8,4 +8,7 @@
     <string name="salah_times">أوقات الصلاة</string>
     <string name="settings">الإعدادات</string>
     <string name="home">Home</string>
+    <string name="english_language">English Language</string>
+    <string name="arabic_language">Arabic Language</string>
+    <string name="salam_alaykom">السَّلامُ عَلَيْكُمْ</string>
 </resources>
