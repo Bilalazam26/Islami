@@ -1,4 +1,4 @@
-package com.bilalazzam.islami.features.quran_feature.presentation.quran.components
+package com.bilalazzam.islami.core.presentation.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
@@ -17,16 +17,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.bilalazzam.islami.R
 
 @Composable
-fun SearchBar(
+fun IslamiTextField(
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
-     value: String = "",
+    value: String = "",
+    icon: Painter,
     enabled: Boolean = true
 ) {
     Card(
@@ -56,7 +57,7 @@ fun SearchBar(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.book),
+                        painter = icon,
                         tint = MaterialTheme.colorScheme.primary,
                         contentDescription = null
                     )

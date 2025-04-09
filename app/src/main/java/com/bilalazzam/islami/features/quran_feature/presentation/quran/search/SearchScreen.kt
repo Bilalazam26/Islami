@@ -19,13 +19,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.bilalazzam.islami.R
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.SearchBar
+import com.bilalazzam.islami.core.presentation.components.IslamiTextField
 
 
 @Composable
 fun SearchScreen(
     topPaddingValues: PaddingValues,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    quranOrTafseer: String // to specify weather to navigate to ayat or tafseer
 ) {
 
     var searchKeyword by remember {
@@ -50,12 +51,13 @@ fun SearchScreen(
                 .padding(horizontal = 16.dp)
         ) {
             Spacer(modifier = Modifier.padding(topPaddingValues))
-            SearchBar(
+            IslamiTextField(
                 value = searchKeyword,
                 onValueChange = {
                     searchKeyword = it
                     //implement search logic
-                }
+                },
+                icon = painterResource(R.drawable.book)
             )
         }
 

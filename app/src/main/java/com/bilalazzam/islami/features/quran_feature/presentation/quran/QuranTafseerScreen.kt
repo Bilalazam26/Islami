@@ -23,10 +23,11 @@ import androidx.compose.ui.unit.dp
 import com.bilalazzam.islami.R
 import com.bilalazzam.islami.core.presentation.navigation.Screen
 import com.bilalazzam.islami.dumy.quranIndecies
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.SearchBar
+import com.bilalazzam.islami.core.presentation.components.IslamiTextField
 
 @Composable
-fun QuranScreen(
+fun QuranTafseerScreen(
+    quranOrTafseer: String,
     topPaddingValues: PaddingValues,
     modifier: Modifier = Modifier,
     navigate: (String) -> Unit
@@ -56,11 +57,12 @@ fun QuranScreen(
                 topPaddingValues = topPaddingValues
             )
             //search bar component
-            SearchBar(
+            IslamiTextField(
                 modifier = Modifier.clickable {
-                    navigate(Screen.SearchScreen.route)
+                    navigate(Screen.SearchAyatScreen.route)
                 },
                 onValueChange = {},
+                icon = painterResource(R.drawable.book),
                 enabled = false
             )
             //pager for suras list and pager
@@ -75,7 +77,12 @@ fun QuranScreen(
             QuranIndex(
                 quranIndexItemUIS = quranIndecies,
                 onItemClick = {
-                    navigate(Screen.SorahScreen.route)
+                    navigate(
+                        if (quranOrTafseer == Screen.QuranScreen.route)
+                            Screen.AyatScreen.route
+                        else
+                            Screen.AyatTafseerScreen.route
+                    )
                 }
             )
 

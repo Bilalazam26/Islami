@@ -10,15 +10,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.createGraph
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.QuranScreen
+import com.bilalazzam.islami.features.quran_feature.presentation.quran.QuranTafseerScreen
 import com.bilalazzam.islami.features.azkar_feature.AzkarScreen
 import com.bilalazzam.islami.features.hadith_feature.HadithScreen
 import com.bilalazzam.islami.core.presentation.main.HomeScreen
 import com.bilalazzam.islami.features.salah_times.SalahTimesScreen
 import com.bilalazzam.islami.core.presentation.main.settings.SettingsScreen
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.SorahScreen
+import com.bilalazzam.islami.dumy.ayahsList
+import com.bilalazzam.islami.dumy.ayatTafseerList
+import com.bilalazzam.islami.features.quran_feature.presentation.quran.AyatScreen
 import com.bilalazzam.islami.features.quran_feature.presentation.quran.search.SearchScreen
-import com.bilalazzam.islami.features.quran_feature.presentation.tafseer.TafseerScreen
 
 
 @Composable
@@ -48,27 +49,81 @@ fun IslamiAppNavHost(
                     onBackClick = { navController.popBackStack() },
                     title = stringResource(Screen.QuranScreen.title)
                 ) { modifier, topPaddingValues ->
-                    QuranScreen(
+                    QuranTafseerScreen(
                         modifier = modifier,
                         topPaddingValues = topPaddingValues,
-                        navigate = {
-                            navController.navigate(it)
-                        }
+                        quranOrTafseer = Screen.QuranScreen.route
+                    ) {
+                        navController.navigate(it)
+                    }
+                }
+            }
+
+            composable(
+                route = Screen.AyatScreen.route
+            ) {
+                AyatScreen(
+                    ayahList = ayahsList,
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
+
+            composable(
+                route = Screen.SearchAyatScreen.route
+            ) {
+                NavScreen(
+                    onBackClick = { navController.popBackStack() },
+                    title = stringResource(Screen.SearchAyatScreen.title)
+                ) { modifier, topPaddingValues  ->
+                    SearchScreen(
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues,
+                        quranOrTafseer = Screen.SearchAyatTafseerScreen.route
                     )
                 }
             }
+
             composable(
                 route = Screen.TafseerScreen.route
             ) {
                 NavScreen(
                     onBackClick = { navController.popBackStack() },
-                    title = stringResource(Screen.TafseerScreen.title)
+                    title = stringResource(Screen.QuranScreen.title)
+                ) { modifier, topPaddingValues ->
+                    QuranTafseerScreen(
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues,
+                        quranOrTafseer = Screen.TafseerScreen.route
+                    ) {
+                        navController.navigate(it)
+                    }
+                }
+            }
+
+            composable(
+                route = Screen.AyatTafseerScreen.route
+            ) {
+                AyatScreen(
+                    ayatTafseerList = ayatTafseerList,
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
+
+            composable(
+                route = Screen.SearchAyatTafseerScreen.route
+            ) {
+                NavScreen(
+                    onBackClick = { navController.popBackStack() },
+                    title = stringResource(Screen.SearchAyatScreen.title)
                 ) { modifier, topPaddingValues  ->
-                    TafseerScreen(
-                        modifier = modifier.padding(topPaddingValues)
+                    SearchScreen(
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues,
+                        quranOrTafseer = Screen.SearchAyatTafseerScreen.route
                     )
                 }
             }
+
             composable(
                 route = Screen.HadithScreen.route
             ) {
@@ -116,28 +171,6 @@ fun IslamiAppNavHost(
                         modifier = modifier.padding(topPaddingValues)
                     )
                 }
-            }
-
-            composable(
-                route = Screen.SearchScreen.route
-            ) {
-                NavScreen(
-                    onBackClick = { navController.popBackStack() },
-                    title = stringResource(Screen.SearchScreen.title)
-                ) { modifier, topPaddingValues  ->
-                    SearchScreen(
-                        modifier = modifier,
-                        topPaddingValues = topPaddingValues
-                    )
-                }
-            }
-
-            composable(
-                route = Screen.SorahScreen.route
-            ) {
-                SorahScreen(
-                    modifier = Modifier.fillMaxSize()
-                )
             }
 
         },
