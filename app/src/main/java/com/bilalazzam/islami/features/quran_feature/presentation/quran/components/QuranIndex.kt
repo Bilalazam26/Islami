@@ -1,4 +1,4 @@
-package com.bilalazzam.islami.features.quran_feature.presentation.quran
+package com.bilalazzam.islami.features.quran_feature.presentation.quran.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.bilalazzam.islami.features.quran_feature.presentation.model.QuranIndexItemUI
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.QuranIndexItem
 
 @Composable
 fun QuranIndex(

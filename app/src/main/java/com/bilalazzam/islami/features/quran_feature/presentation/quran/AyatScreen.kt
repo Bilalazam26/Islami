@@ -19,7 +19,7 @@ import com.bilalazzam.islami.R
 import com.bilalazzam.islami.features.quran_feature.presentation.model.AyahTafseerUI
 import com.bilalazzam.islami.features.quran_feature.presentation.model.AyahUI
 import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.Ayat
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.SorahHeader
+import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.SorahHadithHeader
 
 @Composable
 fun AyatScreen(
@@ -37,11 +37,12 @@ fun AyatScreen(
                 .align(Alignment.TopCenter),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            SorahHeader(
-                sorahName = "الفاتحة",
+            SorahHadithHeader(
+                text = "الفاتحة",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 8.dp)
+                    .padding(horizontal = 8.dp),
+                color = MaterialTheme.colorScheme.primary
             )
             Ayat(
                 modifier = Modifier

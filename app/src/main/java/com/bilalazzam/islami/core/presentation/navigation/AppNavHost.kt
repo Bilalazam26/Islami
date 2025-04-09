@@ -12,12 +12,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.createGraph
 import com.bilalazzam.islami.features.quran_feature.presentation.quran.QuranTafseerScreen
 import com.bilalazzam.islami.features.azkar_feature.AzkarScreen
-import com.bilalazzam.islami.features.hadith_feature.HadithScreen
+import com.bilalazzam.islami.features.hadith_feature.AhadithScreen
 import com.bilalazzam.islami.core.presentation.main.HomeScreen
 import com.bilalazzam.islami.features.salah_times.SalahTimesScreen
 import com.bilalazzam.islami.core.presentation.main.settings.SettingsScreen
 import com.bilalazzam.islami.dumy.ayahsList
 import com.bilalazzam.islami.dumy.ayatTafseerList
+import com.bilalazzam.islami.features.hadith_feature.HadithScreen
 import com.bilalazzam.islami.features.quran_feature.presentation.quran.AyatScreen
 import com.bilalazzam.islami.features.quran_feature.presentation.quran.search.SearchScreen
 
@@ -78,7 +79,7 @@ fun IslamiAppNavHost(
                     SearchScreen(
                         modifier = modifier,
                         topPaddingValues = topPaddingValues,
-                        quranOrTafseer = Screen.SearchAyatTafseerScreen.route
+                        quranOrTafseerOrHadith = Screen.SearchAyatScreen.route
                     )
                 }
             }
@@ -114,12 +115,43 @@ fun IslamiAppNavHost(
             ) {
                 NavScreen(
                     onBackClick = { navController.popBackStack() },
-                    title = stringResource(Screen.SearchAyatScreen.title)
+                    title = stringResource(Screen.SearchAyatTafseerScreen.title)
                 ) { modifier, topPaddingValues  ->
                     SearchScreen(
                         modifier = modifier,
                         topPaddingValues = topPaddingValues,
-                        quranOrTafseer = Screen.SearchAyatTafseerScreen.route
+                        quranOrTafseerOrHadith = Screen.SearchAyatTafseerScreen.route
+                    )
+                }
+            }
+
+            composable(
+                route = Screen.AHadithScreen.route
+            ) {
+                NavScreen(
+                    onBackClick = { navController.popBackStack() },
+                    title = stringResource(Screen.AHadithScreen.title)
+                ) { modifier, topPaddingValues ->
+                    AhadithScreen(
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues
+                    ) { route ->
+                        navController.navigate(route)
+                    }
+                }
+            }
+
+            composable(
+                route = Screen.SearchAhadithScreen.route
+            ) {
+                NavScreen(
+                    onBackClick = { navController.popBackStack() },
+                    title = stringResource(Screen.SearchAhadithScreen.title)
+                ) { modifier, topPaddingValues  ->
+                    SearchScreen(
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues,
+                        quranOrTafseerOrHadith = Screen.SearchAhadithScreen.route
                     )
                 }
             }
@@ -130,12 +162,14 @@ fun IslamiAppNavHost(
                 NavScreen(
                     onBackClick = { navController.popBackStack() },
                     title = stringResource(Screen.HadithScreen.title)
-                ) { modifier, topPaddingValues ->
+                ) { modifier, topPaddingValues  ->
                     HadithScreen(
-                        modifier = modifier.padding(topPaddingValues)
+                        modifier = modifier,
+                        topPaddingValues = topPaddingValues
                     )
                 }
             }
+
             composable(
                 route = Screen.AzkarScreen.route
             ) {

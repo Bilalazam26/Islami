@@ -24,21 +24,21 @@ import com.bilalazzam.islami.R
 
 @Composable
 fun IslamiTextField(
-    onValueChange: (String) -> Unit,
+    hint: String,
     modifier: Modifier = Modifier,
     value: String = "",
     icon: Painter,
-    enabled: Boolean = true
+    enabled: Boolean = true,
+    onValueChange: (String) -> Unit
 ) {
     Card(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+            .fillMaxWidth(),
         colors = CardDefaults.cardColors().copy(
             containerColor = MaterialTheme.colorScheme.background.copy(alpha = .8f)
         ),
         border = BorderStroke(
-            width = 3.dp,
+            width = 2.dp,
             color = MaterialTheme.colorScheme.primary
         )
     ) {
@@ -67,7 +67,7 @@ fun IslamiTextField(
                         // Show hint only when text is empty
                         if (value.isEmpty()) {
                             Text(
-                                text  = stringResource(R.string.search_for_ayah),
+                                text  = hint,
                                 style = MaterialTheme.typography.bodySmall.copy(
                                     color = MaterialTheme.colorScheme.primary
                                 )

@@ -1,19 +1,17 @@
-package com.bilalazzam.islami.features.quran_feature.presentation.quran
-
+package com.bilalazzam.islami.features.hadith_feature
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -21,26 +19,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.bilalazzam.islami.R
-import com.bilalazzam.islami.core.presentation.navigation.Screen
-import com.bilalazzam.islami.dumy.quranIndecies
-import com.bilalazzam.islami.core.presentation.components.IslamiTextField
 import com.bilalazzam.islami.core.presentation.components.IslamiScreenHeader
-import com.bilalazzam.islami.features.quran_feature.presentation.quran.components.QuranIndex
+import com.bilalazzam.islami.core.presentation.components.IslamiTextField
+import com.bilalazzam.islami.core.presentation.navigation.Screen
+import com.bilalazzam.islami.dumy.ahadith
+import com.bilalazzam.islami.features.hadith_feature.components.AhadithPager
 
 @Composable
-fun QuranTafseerScreen(
-    quranOrTafseer: String,
-    topPaddingValues: PaddingValues,
+fun AhadithScreen(
     modifier: Modifier = Modifier,
+    topPaddingValues: PaddingValues,
     navigate: (String) -> Unit
 ) {
-
     Box(
         modifier = Modifier
             .fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.mosque_background),
+            painter = painterResource(id = R.drawable.mosque_02_background),
             contentDescription = null,
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
@@ -49,8 +45,8 @@ fun QuranTafseerScreen(
         Column(
             modifier = modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background.copy(alpha = .94f))
-                .padding(horizontal = 16.dp)
+                .background(MaterialTheme.colorScheme.background.copy(alpha = .94f)),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             IslamiScreenHeader(
                 modifier = Modifier
@@ -60,39 +56,25 @@ fun QuranTafseerScreen(
             )
             //search bar component
             IslamiTextField(
-                modifier = Modifier.clickable {
-                    navigate(Screen.SearchAyatScreen.route)
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .clickable {
+                    navigate(Screen.SearchAhadithScreen.route)
                 },
                 onValueChange = {},
                 icon = painterResource(R.drawable.book),
                 enabled = false,
-                hint = stringResource(R.string.search_for_ayah)
+                hint = stringResource(R.string.search_for_hadith)
             )
-            //pager for suras list and pager
-
-            Text(
-                text = stringResource(R.string.suras_list),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier
-                    .padding(top = 16.dp)
-            )
-
-            QuranIndex(
-                quranIndexItemUIS = quranIndecies,
-                onItemClick = {
-                    navigate(
-                        if (quranOrTafseer == Screen.QuranScreen.route)
-                            Screen.AyatScreen.route
-                        else
-                            Screen.AyatTafseerScreen.route
-                    )
-                }
-            )
-
+            //AHadithPager
+            var ahadithPagerState = rememberPagerState(pageCount = {ahadith.size})
+            AhadithPager(
+                ahadith = ahadith,
+                pagerState = ahadithPagerState
+            ) { route ->
+                navigate(route)
+            }
         }
 
     }
-
 }
-

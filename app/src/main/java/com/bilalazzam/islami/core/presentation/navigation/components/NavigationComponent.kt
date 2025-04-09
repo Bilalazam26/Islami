@@ -11,9 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bilalazzam.islami.ui.theme.IslamiTheme
 import com.bilalazzam.islami.R
 import com.bilalazzam.islami.core.presentation.navigation.Screen
 
@@ -51,7 +49,7 @@ fun NavigationComponent(
             )
             NavigationItem(
                 modifier = Modifier.clickable {
-                    onItemClick(Screen.HadithScreen.route)
+                    onItemClick(Screen.AHadithScreen.route)
                 },
                 iconPainter = painterResource(R.drawable.hadith),
                 text = R.string.hadith

@@ -15,9 +15,9 @@ val Typography = Typography(
         fontFamily = FontFamily(
             Font(R.font.motairah)
         ),
-        fontSize = 48.sp,
+        fontSize = 64.sp,
         lineHeight = 56.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.8.sp
     ),
     headlineLarge = TextStyle(
         fontFamily = FontFamily(
