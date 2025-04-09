@@ -57,10 +57,10 @@ fun LanguageSwitch(
                     } else {
                         MaterialTheme.colorScheme.background
                     })
-                    .padding(vertical = 12.dp, horizontal = 16.dp)
                     .clickable {
                         languageSwitch("ar")
                     }
+                    .padding(vertical = 8.dp, horizontal = 16.dp)
             ) {
                 Image(
                     painter = painterResource(R.drawable.ye),
@@ -80,10 +80,10 @@ fun LanguageSwitch(
                     } else {
                         MaterialTheme.colorScheme.background
                     })
-                    .padding(vertical = 12.dp, horizontal = 16.dp)
                     .clickable {
                         languageSwitch("en")
                     }
+                    .padding(vertical = 8.dp, horizontal = 16.dp)
             ) {
                 Image(
                     painter = painterResource(R.drawable.us),

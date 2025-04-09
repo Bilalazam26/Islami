@@ -32,31 +32,49 @@ fun HomeScreen(
         modifier = modifier
             .fillMaxSize()
     ) {
-
         Image(
-            painter = painterResource(R.drawable.glow),
+            painter = painterResource(id = R.drawable.kaaba),
             contentDescription = null,
+            contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
-                .align(Alignment.TopStart),
-            alignment = Alignment.TopEnd
+                .align(Alignment.Center)
+                .padding(
+                    bottom = 196.dp
+                )
         )
-
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .align(Alignment.TopCenter)
+                .background(MaterialTheme.colorScheme.background.copy(alpha = .94f))
         ) {
             Image(
-                painter = painterResource(R.drawable.mosque),
+                painter = painterResource(R.drawable.glow),
                 contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth(),
-                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+                    .fillMaxWidth()
+                    .align(Alignment.TopStart),
+                alignment = Alignment.TopEnd
             )
-            HomeContent(
-                modifier = Modifier.fillMaxSize()
-            )
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.TopCenter)
+                    .background(MaterialTheme.colorScheme.background.copy(alpha = .5f))
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.mosque),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+                )
+                HomeContent(
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
         }
         Column(
             modifier = Modifier

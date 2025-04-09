@@ -43,6 +43,14 @@ val Typography = Typography(
         lineHeight = 36.sp,
         letterSpacing = 0.5.sp
     ),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily(
+            Font(R.font.xb_yas_regular)
+        ),
+        fontSize = 20.sp,
+        lineHeight = 32.sp,
+        letterSpacing = 0.5.sp
+    ),
     bodySmall = TextStyle(
         fontFamily = FontFamily(
             Font(R.font.xb_yas_regular)
@@ -57,6 +65,14 @@ val Typography = Typography(
         ),
         fontSize = 24.sp,
         lineHeight = 32.sp,
+        letterSpacing = 0.5.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = FontFamily(
+            Font(R.font.xb_yas_regular)
+        ),
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     )
 

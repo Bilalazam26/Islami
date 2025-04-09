@@ -10,4 +10,10 @@
     <string name="english_language">English Language</string>
     <string name="arabic_language">Arabic Language</string>
     <string name="salam_alaykom">As-Salamu Alaykumْ</string>
+    <string name="change_app_language">Change Language</string>
+    <string name="search_for_ayah">Search for Ayah…</string>
+    <string name="search">Search</string>
+    <string name="suras_list">Suras List:</string>
+    <string name="ayahs">%1$s Ayahs</string>
+    <string name="empty" />
 </resources>

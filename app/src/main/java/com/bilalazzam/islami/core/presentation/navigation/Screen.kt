@@ -12,4 +12,6 @@ sealed class Screen(val route: String, @StringRes val title: Int) {
     object AzkarScreen: Screen("azkar_screen", R.string.azkar)
     object SalahTimesScreen: Screen("salah_times_screen", R.string.salah_times)
     object SettingsScreen: Screen("settings_screen", R.string.settings)
+    object SearchScreen: Screen("search_screen", R.string.search)
+    object SorahScreen: Screen("sorah_screen", R.string.empty)
 }

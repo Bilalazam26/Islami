@@ -9,10 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.rememberNavController
 import com.bilalazzam.islami.core.presentation.main.settings.LocaleManager
-import com.bilalazzam.islami.core.presentation.navigation.AppUIHolder
+import com.bilalazzam.islami.core.presentation.navigation.IslamiAppNavHost
 import com.bilalazzam.islami.ui.theme.IslamiTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +26,7 @@ class MainActivity : ComponentActivity() {
             IslamiTheme {
                 val navController = rememberNavController()
                 Scaffold(modifier = Modifier.Companion.fillMaxSize()) { innerPadding ->
-                    AppUIHolder(
+                    IslamiAppNavHost(
                         modifier = Modifier.Companion
                             .fillMaxSize()
                             .padding(innerPadding),

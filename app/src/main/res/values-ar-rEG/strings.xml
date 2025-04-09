@@ -11,4 +11,10 @@
     <string name="english_language">English Language</string>
     <string name="arabic_language">Arabic Language</string>
     <string name="salam_alaykom">السَّلامُ عَلَيْكُمْ</string>
+    <string name="change_app_language">تغيير لغة التطبيق</string>
+    <string name="search_for_ayah"> ابحث عن آية…</string>
+    <string name="search">البحث</string>
+    <string name="suras_list">السور:</string>
+    <string name="ayahs">%1$s آية</string>
+    <string name="empty" />
 </resources>
